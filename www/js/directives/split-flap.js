@@ -23,7 +23,7 @@
                             if (newVal) {
                                 setTimeout(function() {
                                     $('#'+elem.id).splitflap("value", newVal)
-                                }, 1900);
+                                }, 3000);
                             }
                             //  else {
                             //     setTimeout(function() {

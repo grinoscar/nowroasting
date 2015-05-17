@@ -16,6 +16,8 @@
     <script src="lib/ionic/js/ionic.bundle.js"></script>
     <script type="text/javascript" src="lib/jquery/dist/jquery.min.js"></script>
     <script type="text/javascript" src="lib/jquery-ui/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="lib/lodash/lodash.min.js"></script>
+    <script type="text/javascript" src="lib/restangular/dist/restangular.min.js"></script>
 
     <!-- splitflap js -->
     <script src="lib/splitflap/js/splitflap.js"></script>
@@ -33,9 +35,16 @@
     <ion-pane>
       <ion-header-bar class="bar-positive">
         <h1 class="title">Now Roasting</h1>
-        <div class="split-flap clock"></div>
+
       </ion-header-bar>
       <ion-content>
+        <div class="split-flap clock">
+              <div class="segment hour">
+              </div><div class="segment separator">
+              </div><div class="segment minute">
+              </div><div class="segment ampm">
+              </div>
+        </div>
         <div id="line{{$index}}" ng-repeat="line in lines track by $index" class="split-flap flap-line" split-flap-output="text" ng-model="line">
         </div>
       </ion-content>

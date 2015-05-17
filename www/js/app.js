@@ -3,7 +3,7 @@
 // angular.module is a global place for creating, registering and retrieving Angular modules
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
-angular.module('starter', ['ionic', 'starter.controllers'])
+angular.module('starter', ['ionic', 'starter.controllers', 'restangular'])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function($scope, $jquery) {
@@ -16,7 +16,7 @@ angular.module('starter', ['ionic', 'starter.controllers'])
       StatusBar.styleDefault();
     }
     $(".split-flap.flap-line").splitflap({
-      segments: 40,
+      segments: 22,
       initial: "",
       glyphSet:
       {
@@ -24,6 +24,15 @@ angular.module('starter', ['ionic', 'starter.controllers'])
       }
       // [" ","A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z",".","?","!",",",";",":","0","1","2","3","4","5","6","7","8","9"]
       });
+
+    $(".split-flap.clock").splitflap({
+      glyphSet: {
+        ".hour": $.splitflap.twentyfour,
+        ".separator": [":"],
+        ".minute": $.splitflap.minutes,
+        ".ampm": ["a.m.", "p.m."]
+      }
+    });
 
     // $(".split-flap.roaster-location").splitflap({
     //   segments: 1,

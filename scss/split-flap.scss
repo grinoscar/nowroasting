@@ -12,10 +12,14 @@ $top-background-color:      #222;
 $bottom-color:              #ccc;
 $bottom-background-color:   #151515;
 
-$split-flap-font-size:      50px;
-$split-flap-narrow-width:   48px;
+$split-flap-font-size:      40px;
+$split-flap-narrow-width:   40px;
+$split-flap-time-width:     82px;
+$split-flap-medium-width:   100px;
 $split-flap-wide-width:     800px;
-$split-flap-margin-bottom:  7px;
+$split-flap-margin-bottom:  2px;
+
+$split-flap-radius:         3px;
 
 .splitflap .segment
 {
@@ -70,10 +74,10 @@ $split-flap-margin-bottom:  7px;
 {
     color: $top-color;
     background-color: $top-background-color;
-    -webkit-border-top-left-radius: 7px;
-    -webkit-border-top-right-radius: 7px;
-    border-top-left-radius: 7px;
-    border-top-right-radius: 7px;
+    -webkit-border-top-left-radius: $split-flap-radius;
+    -webkit-border-top-right-radius: $split-flap-radius;
+    border-top-left-radius: $split-flap-radius;
+    border-top-right-radius: $split-flap-radius;
     -webkit-transition: -webkit-transform 110ms 0 ease-out;
     transition: transform 110ms 0ms ease-out;
     -webkit-transform: scaleY(1);
@@ -95,10 +99,10 @@ $split-flap-margin-bottom:  7px;
     background-color: $bottom-background-color;
     -webkit-transition: -webkit-transform 100ms 60ms ease-in;
     transition: transform 100ms 60ms ease-in;
-    -webkit-border-bottom-right-radius: 7px;
-    -webkit-border-bottom-left-radius: 7px;
-    border-bottom-right-radius: 7px;
-    border-bottom-left-radius: 7px;
+    -webkit-border-bottom-right-radius: $split-flap-radius;
+    -webkit-border-bottom-left-radius: $split-flap-radius;
+    border-bottom-right-radius: $split-flap-radius;
+    border-bottom-left-radius: $split-flap-radius;
     -webkit-transform-origin: 50% 0;
     transform-origin: 50% 0;
 
@@ -118,15 +122,26 @@ $split-flap-margin-bottom:  7px;
     margin-bottom: $split-flap-margin-bottom;
   }
 
-.splitflap .segment
-  {
+.splitflap .segment {
     font-family: "Cutive Mono", 'Ubuntu Mono', "Oxygen Mono", "Nova Mono", sans-serif;
+}
+.splitflap .segment, .splitflap.clock .segment.separator
+  {
     width: $split-flap-narrow-width;
+  }
+
+.splitflap.clock .segment.hour, .splitflap.clock .segment.minute
+  {
+    width: $split-flap-time-width;
+  }
+
+.splitflap.clock .segment.ampm
+  {
+    width: $split-flap-medium-width;
   }
 
 .splitflap.roaster-location .segment
   {
-    font-family: "Cutive Mono", 'Ubuntu Mono', "Oxygen Mono", "Nova Mono", sans-serif;
     width: $split-flap-wide-width;
   }
 
