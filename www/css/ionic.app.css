@@ -7755,6 +7755,10 @@ a.button {
   font-family: "Cutive Mono", 'Ubuntu Mono', "Oxygen Mono", "Nova Mono", sans-serif;
   width: 48px; }
 
+.splitflap.roaster-location .segment {
+  font-family: "Cutive Mono", 'Ubuntu Mono', "Oxygen Mono", "Nova Mono", sans-serif;
+  width: 800px; }
+
 .splitflap .ampm .top li {
   border-bottom-left-radius: 0 !important;
   border-bottom-right-radius: 0 !important; }
@@ -7780,3 +7784,5 @@ a.button {
     border-bottom-right-radius: 0px;
       }
 */
+ion-content {
+  background-color: #006341; }

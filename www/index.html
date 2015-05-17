@@ -33,9 +33,10 @@
     <ion-pane>
       <ion-header-bar class="bar-positive">
         <h1 class="title">Now Roasting</h1>
+        <div class="split-flap clock"></div>
       </ion-header-bar>
-      <ion-content style=" background-color: #128812">
-        <div id="line{{$index}}" ng-repeat="line in lines track by $index" class="split-flap" split-flap-output="text" ng-model="line">
+      <ion-content>
+        <div id="line{{$index}}" ng-repeat="line in lines track by $index" class="split-flap flap-line" split-flap-output="text" ng-model="line">
         </div>
       </ion-content>
     </ion-pane>

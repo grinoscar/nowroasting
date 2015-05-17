@@ -6,7 +6,7 @@
 angular.module('starter', ['ionic', 'starter.controllers'])
 
 .run(function($ionicPlatform) {
-  $ionicPlatform.ready(function($scope) {
+  $ionicPlatform.ready(function($scope, $jquery) {
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
     // for form inputs)
     if(window.cordova && window.cordova.plugins.Keyboard) {
@@ -15,14 +15,29 @@ angular.module('starter', ['ionic', 'starter.controllers'])
     if(window.StatusBar) {
       StatusBar.styleDefault();
     }
-    $(".split-flap").splitflap({
+    $(".split-flap.flap-line").splitflap({
       segments: 40,
       initial: "",
-      glyphSet: [" ","A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z",".","?","!",",",";",":","0","1","2","3","4","5","6","7","8","9"]
+      glyphSet:
+      {
+        ".segment": $.splitflap.extended
+      }
+      // [" ","A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z",".","?","!",",",";",":","0","1","2","3","4","5","6","7","8","9"]
       });
 
+    // $(".split-flap.roaster-location").splitflap({
+    //   segments: 1,
+    //   initial: "",
+    //   case: "upper",
+    //   tickLength: 500,
+    //   glyphSet:
+    //   {
+    //     ".plant-name": ["Kent","York","Roastery","Amsterdam","Sandy Run","TATA","Seattle SSC"]
+    //   }
+    // });
+
     setTimeout(function() {
-      $(".split-flap").splitflap("value", "")
+      $(".split-flap.flap-line").splitflap("value", "");
     });
 
   });

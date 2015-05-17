@@ -13,7 +13,8 @@ $bottom-color:              #ccc;
 $bottom-background-color:   #151515;
 
 $split-flap-font-size:      50px;
-$split-flap-width:          48px;
+$split-flap-narrow-width:   48px;
+$split-flap-wide-width:     800px;
 $split-flap-margin-bottom:  7px;
 
 .splitflap .segment
@@ -120,7 +121,13 @@ $split-flap-margin-bottom:  7px;
 .splitflap .segment
   {
     font-family: "Cutive Mono", 'Ubuntu Mono', "Oxygen Mono", "Nova Mono", sans-serif;
-    width: $split-flap-width;
+    width: $split-flap-narrow-width;
+  }
+
+.splitflap.roaster-location .segment
+  {
+    font-family: "Cutive Mono", 'Ubuntu Mono', "Oxygen Mono", "Nova Mono", sans-serif;
+    width: $split-flap-wide-width;
   }
 
     .splitflap .ampm .top li
