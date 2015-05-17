@@ -1,0 +1,12 @@
+{
+  "name": "NowRoasting",
+  "private": "true",
+  "dependencies": {
+    "jquery": "~2.1.4",
+    "jquery-ui": ""
+  },
+  "devDependencies": {
+    "ionic": "driftyco/ionic-bower#1.0.0",
+    "splitflap": "conartist6/splitflap#master"
+  }
+}

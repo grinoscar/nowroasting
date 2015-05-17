@@ -1,0 +1,153 @@
+// split-flap.scss
+// variables and settings for split-flap display
+
+// variables
+
+$seg-margin-vertical:       2px;
+$seg-margin-horizontal:     1px;
+
+$top-color:                 #fff;
+$top-background-color:      #222;
+
+$bottom-color:              #ccc;
+$bottom-background-color:   #151515;
+
+$split-flap-font-size:      50px;
+$split-flap-width:          48px;
+$split-flap-margin-bottom:  7px;
+
+.splitflap .segment
+{
+    position: relative;
+    display: inline-block;
+    margin: $seg-margin-vertical $seg-margin-horizontal;
+}
+
+.splitflap:after
+{
+    content: " ";
+    display: table;
+    clear: both;
+}
+
+.splitflap .segment ol
+{
+    padding: 0;
+    margin: 0;
+    position: relative;
+}
+
+.splitflap .segment li
+{
+    position: absolute;
+    display: block;
+    top:0;
+    left: 0;
+    overflow: hidden;
+    text-align: center;
+    height: .48em;
+    width: 100%;
+}
+
+.splitflap .top li:first-child
+{
+    position: static;
+}
+
+.splitflap .bottom li:last-child
+{
+    position: static;
+}
+
+.splitflap .top li.falling
+{
+    -webkit-transform: scaleY(0);
+    transform: scaleY(0);
+}
+
+.splitflap .top li
+{
+    color: $top-color;
+    background-color: $top-background-color;
+    -webkit-border-top-left-radius: 7px;
+    -webkit-border-top-right-radius: 7px;
+    border-top-left-radius: 7px;
+    border-top-right-radius: 7px;
+    -webkit-transition: -webkit-transform 110ms 0 ease-out;
+    transition: transform 110ms 0ms ease-out;
+    -webkit-transform: scaleY(1);
+    -webkit-transform-origin: 50% 100%;
+    transform: scaleY(1);
+    transform-origin: 50% 100%;
+}
+
+.splitflap .segment ol.top
+{
+    margin-bottom: .03em;
+    line-height: 1;
+}
+
+.splitflap .bottom li
+{
+    color: $bottom-color;
+    line-height: 0;
+    background-color: $bottom-background-color;
+    -webkit-transition: -webkit-transform 100ms 60ms ease-in;
+    transition: transform 100ms 60ms ease-in;
+    -webkit-border-bottom-right-radius: 7px;
+    -webkit-border-bottom-left-radius: 7px;
+    border-bottom-right-radius: 7px;
+    border-bottom-left-radius: 7px;
+    -webkit-transform-origin: 50% 0;
+    transform-origin: 50% 0;
+
+    -webkit-transform: scaleY(0);
+    transform: scaleY(0);
+}
+
+.splitflap .bottom li.current, .splitflap .bottom li.falling
+{
+    -webkit-transform: scaleY(1);
+    transform: scaleY(1);
+}
+
+.splitflap
+  {
+    font-size: $split-flap-font-size;
+    margin-bottom: $split-flap-margin-bottom;
+  }
+
+.splitflap .segment
+  {
+    font-family: "Cutive Mono", 'Ubuntu Mono', "Oxygen Mono", "Nova Mono", sans-serif;
+    width: $split-flap-width;
+  }
+
+    .splitflap .ampm .top li
+      {
+    border-bottom-left-radius: 0 !important;
+    border-bottom-right-radius: 0 !important;
+      }
+      .splitflap .ampm .bottom li
+      {
+    border-top-left-radius: 0 !important;
+    border-top-right-radius: 0 !important;
+      }
+
+/*      .splitflap .segment:first-child .top li
+      {
+    border-top-left-radius: 0px;
+      }
+      .splitflap .segment:last-child .top li
+      {
+    border-top-right-radius: 0px;
+      }
+      .splitflap .segment:first-child .bottom li
+      {
+    border-bottom-left-radius: 0px;
+      }
+      .splitflap .segment:last-child .bottom li
+      {
+    border-bottom-right-radius: 0px;
+      }
+*/

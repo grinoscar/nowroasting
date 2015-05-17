@@ -1,0 +1,13 @@
+{
+  "name": "splitflap",
+  "homepage": "https://github.com/conartist6/splitflap",
+  "_release": "ee9ee04ad5",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "ee9ee04ad5e6ee5ea6aacb00513d331c3c51148e"
+  },
+  "_source": "git://github.com/conartist6/splitflap.git",
+  "_target": "master",
+  "_originalSource": "conartist6/splitflap"
+}
