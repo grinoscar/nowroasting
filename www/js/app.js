@@ -6,21 +6,11 @@
 angular.module('starter', ['ionic', 'starter.controllers', 'restangular'])
 
 .run(function($ionicPlatform) {
-  $ionicPlatform.ready(function($scope, $jquery) {
+  $ionicPlatform.ready(function() {
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
     // for form inputs)
     var updateQuoteInteral = 5;
     var intervalCount = 0;
-    var coffeeNames = [
-      "Sumatra",
-      "Kenya",
-      "DCF espresso",
-      "Espresso",
-      "Guatemala Antigua",
-      "Rwanda (red)",
-      "Casi Cielo",
-      "Cold Brew"
-    ];
 
     function clockInput(time)
     {
@@ -38,19 +28,6 @@ angular.module('starter', ['ionic', 'starter.controllers', 'restangular'])
       setTimeout(updateClock, (62 - now.getSeconds()) * 1000);
       $(".split-flap.clock").splitflap("value", clockInput(now));
 
-      // load new $scope.lines.
-
-      // random coffee.
-
-
-      // every 5th time, update quote from restangular call to http://www.iheartquotes.com/api/v1/random?format=json&max_lines=2
-
-    }
-
-    function updateData() {
-
-      setTimeout(TextService.updateCoffee, 30000);
-
     }
 
     if(window.cordova && window.cordova.plugins.Keyboard) {
@@ -63,10 +40,9 @@ angular.module('starter', ['ionic', 'starter.controllers', 'restangular'])
       segments: 22,
       initial: "",
       glyphSet:
-      {
-        ".segment": $.splitflap.extended
-      }
-      // [" ","A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z",".","?","!",",",";",":","0","1","2","3","4","5","6","7","8","9"]
+        {
+          ".segment": $.splitflap.extended
+        }
       });
 
     var now = new Date();
@@ -79,24 +55,10 @@ angular.module('starter', ['ionic', 'starter.controllers', 'restangular'])
       initial: clockInput(now)
     });
 
-    // $(".split-flap.roaster-location").splitflap({
-    //   segments: 1,
-    //   initial: "",
-    //   case: "upper",
-    //   tickLength: 500,
-    //   glyphSet:
-    //   {
-    //     ".plant-name": ["Kent","York","Roastery","Amsterdam","Sandy Run","TATA","Seattle SSC"]
-    //   }
-    // });
-
     setTimeout(function() {
       $(".split-flap.flap-line").splitflap("value", "");
       updateClock();
-      // $(".split-flap.clock").splitflap("value", )
     });
-
-    // setTimeout(updateClock, (62 - now.getSeconds()) * 1000);
 
   });
 })

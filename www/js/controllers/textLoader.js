@@ -5,51 +5,47 @@
     angular.module('starter.controllers', []
     ).controller('TextLoaderCtrl', [
         '$scope',
-        function textLoader($scope) {
-            var textSet = [
+        '$timeout',
+        function textLoader($scope, $timeout) {
+            var textSet =
                 [
-                "line 1",
-                "",
-                "now roasting sumatra",
-                "",
-                "How does this work"
-                ],
-                [
-                    "Now roasting guatemala antigua",
-                    "",
-                    "Cocoa and Lemon",
-                    "Enjoy this medium roast coffee daily"
-                ],
-                [
-                    "Gold Coast",
-                    "",
-                    "born in chicago",
-                    ""
-                ],
-                [
-                    "Casi Cielo:         almost heaven",
-                    "pairs with fine     dining",
-                    "",
-                    "throughout the meal"
-                ],
-                [
-                    " abcdefghijklmnopqrstuvwxyz",
-                    " ABCDEFGHIJKLMNOPQRSTUVWXYZ",
-                    "0123456789!@#$%&*.?\"+-=/<>:)(",
-                    "",
-                    "bunches of .+*? stuff."
-                ],
-                [
-                    "line 1", "line 2", "line 3", "line 4", "line 5", "line 6"
-                ]
+                    "", "", "", "", "", "", "", "", "", ""
+                ];
+            var coffeeNames = [
+              "Sumatra",
+              "Kenya",
+              "DCF espresso",
+              "Espresso",
+              "Guatemala Antigua",
+              "Rwanda",
+              "Casi Cielo",
+              "Cold Brew"
             ];
 
-            $scope.lines = textSet[5];
 
-            setTimeout(function() {
-                updateData();
-            }, 500);
+           function updateCoffee() {
+                var idx;
 
+                $timeout(updateCoffee, 120000);
+
+                $timeout(function applyCoffeeName () {
+                    idx = Math.floor(Math.random() * coffeeNames.length);
+
+                    $scope.lines[0] = coffeeNames[idx];
+                    $scope.lines[1] = " ";
+                    $scope.lines[2] = " ";
+                    _.defer(function() {
+                        $scope.$apply();
+                    });
+                }, 250);
+
+            }
+
+            $scope.lines = textSet;
+
+            $timeout(function() {
+                 updateCoffee();
+            }, 2500);
 
         }
     ]);
