@@ -31,23 +31,26 @@
     <script type="text/javascript" src="js/directives/split-flap.js"></script>
   </head>
   <body ng-app="starter" ng-controller="TextLoaderCtrl">
-
     <ion-pane>
-      <ion-header-bar class="bar-positive">
-        <h1 class="title">Now Roasting</h1>
-
-      </ion-header-bar>
-      <ion-content>
-        <div class="split-flap clock">
+      <ion-nav-bar class="bar-positive">
+        <ion-nav-title>
+          <h1 class="title">Now Roasting</h1>
+        </ion-nav-title>
+        <ion-nav-buttons side="right">
+          <div class="buttton split-flap clock pull-right" side="right">
               <div class="segment hour">
               </div><div class="segment separator">
               </div><div class="segment minute">
-              </div><div class="segment ampm">
               </div>
-        </div>
-        <div id="line{{$index}}" ng-repeat="line in lines track by $index" class="split-flap flap-line" split-flap-output="text" ng-model="line">
-        </div>
-      </ion-content>
-    </ion-pane>
+          </div>
+        </ion-nav-buttons>
+      </ion-nav-bar>
+      <ion-view>
+        <ion-content class="has-header">
+          <div id="line{{$index}}" ng-repeat="line in lines track by $index" class="split-flap flap-line" split-flap-output="text" ng-model="line">
+          </div>
+        </ion-content>
+      </ion-pane>
+    </ion-view>
   </body>
 </html>

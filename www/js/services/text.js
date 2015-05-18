@@ -1,17 +1,16 @@
 /*jslint browser: true*/
 /*global angular*/
 /**
- * Config Service
+ * Text Service
  *
- * Contains interface for retrieving and storing application
- * configuration values
+ * Contains interface for retrieving random coffee and quotes.
  */
 (function(services) {
     'use strict';
     services.factory('TextService', [
-        'Restangular',
-        '$scope'
-        function(Restangular, $scope) {
+        'restangular',
+        '$rootScope',
+        function(restangular, $scope) {
             var idx;
             var coffeeNames = [
               "Sumatra",
