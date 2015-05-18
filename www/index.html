@@ -47,6 +47,9 @@
       </ion-nav-bar>
       <ion-view>
         <ion-content class="has-header">
+          <div id="blank-line">
+            <br />
+          </div>
           <div id="line{{$index}}" ng-repeat="line in lines track by $index" class="split-flap flap-line" split-flap-output="text" ng-model="line">
           </div>
         </ion-content>

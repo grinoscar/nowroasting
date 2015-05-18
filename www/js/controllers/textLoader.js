@@ -9,7 +9,7 @@
         function textLoader($scope, $timeout) {
             var textSet =
                 [
-                    "", "", "", "", "", "", "", "", "", ""
+                    "", "", "", "", "", "", "", "", ""
                 ];
             var coffeeNames = [
               "Sumatra",
