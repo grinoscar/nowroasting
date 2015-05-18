@@ -4,9 +4,8 @@
     'use strict';
     angular.module('starter.controllers', []
     ).controller('TextLoaderCtrl', [
-        '$rootScope',
+        '$scope',
         function textLoader($scope) {
-            var idx;
             var textSet = [
                 [
                 "line 1",
@@ -41,11 +40,17 @@
                     "bunches of .+*? stuff."
                 ],
                 [
-                    "line 1", "line 2", "line 3", "line 4", "line 5", "line 6", "line 7"
+                    "line 1", "line 2", "line 3", "line 4", "line 5", "line 6"
                 ]
             ];
-            idx = Math.floor(Math.random() * textSet.length);
-            $scope.lines = textSet[idx];
+
+            $scope.lines = textSet[5];
+
+            setTimeout(function() {
+                updateData();
+            }, 500);
+
+
         }
     ]);
 }(angular));
